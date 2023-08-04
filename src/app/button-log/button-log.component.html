@@ -1,1 +1,10 @@
-<p>button-log works!</p>
+<div class="container center p-2 border border-primary">
+  <button class="btn btn-primary btn-block p-3 m-3" (click)="onDisplay()">Display Details</button>
+  <p class="m-3 center" *ngIf="displayStatus">
+    Life is Beautiful.
+  </p>
+  <ul class="m-3 p-1 border border-secondary">
+    <li class="m-2" *ngFor="let log of logArray" [ngClass]="{'text-white': isTextColor(log)}" [ngStyle]="{backgroundColor: getBgColor(log)}">{{log}}</li>
+  </ul>
+
+</div>
